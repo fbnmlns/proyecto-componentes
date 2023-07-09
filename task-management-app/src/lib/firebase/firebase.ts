@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { deleteApp, getApp, getApps, initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore';
+import { collection, doc, getDocs, getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import {
     PUBLIC_VITE_APIKEY,
@@ -11,7 +11,6 @@ import {
     PUBLIC_VITE_APP_ID,
     PUBLIC_VITE_MEASUREMENT_ID
 } from '$env/static/public';
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
