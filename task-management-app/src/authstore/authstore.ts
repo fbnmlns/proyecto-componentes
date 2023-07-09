@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 interface AuthUser {
     uid: string;
     email: string;
-    data: {
+    data?: {
         tasks: string[];
     };
   }
