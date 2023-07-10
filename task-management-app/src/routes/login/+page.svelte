@@ -1,19 +1,23 @@
 <!-- src/routes/login/+page.svelte -->
 <script lang="ts">
-    
-    import { goto } from '$app/navigation';
-    import { signInWithEmailAndPassword } from 'firebase/auth';
-    import { auth } from '../../lib/firebase/firebase';
-   
-let email: string;
+	import { goto } from '$app/navigation';
+	import { signInWithEmailAndPassword } from 'firebase/auth';
+	import { auth } from '../../lib/firebase/firebase';
+	import { authUser } from '../../authstore/authstore'
+
+	let email: string;
 	let password: string;
 
 	let success: boolean | undefined = undefined;
 
 	const login = () => {
 		signInWithEmailAndPassword(auth, email, password)
-			.then(() => {
-				goto('/register');
+			.then((userCredential) => {
+				$authUser = {
+					uid: userCredential.user.uid,
+					email: userCredential.user.email || ''
+				};
+				goto('/protected');
 			})
 			.catch((error) => {
 				const errorCode = error.code;
