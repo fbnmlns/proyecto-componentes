@@ -1,10 +1,15 @@
 import { writable } from 'svelte/store';
 
+export interface TodoItem {
+    text: string;
+    status: boolean;
+}
+
 interface AuthUser {
     uid: string;
     email: string;
     data?: {
-        tasks: string[];
+        tasks: TodoItem[];
     };
   }
    

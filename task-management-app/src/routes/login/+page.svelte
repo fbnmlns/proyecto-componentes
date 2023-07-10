@@ -1,8 +1,7 @@
-<!-- src/routes/login/+page.svelte -->
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { signInWithEmailAndPassword } from 'firebase/auth';
-	import { auth } from '../../lib/firebase/firebase';
+	import { auth } from '$lib/firebase';
 	import { authUser } from '../../authstore/authstore'
 
 	let email: string;
@@ -17,7 +16,7 @@
 					uid: userCredential.user.uid,
 					email: userCredential.user.email || ''
 				};
-				goto('/protected');
+				goto('/tasklist');
 			})
 			.catch((error) => {
 				const errorCode = error.code;

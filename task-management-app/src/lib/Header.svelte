@@ -2,8 +2,8 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { signOut } from 'firebase/auth';
-	import { auth } from '../../lib/firebase/firebase';
-	import { authUser } from '../../authstore/authstore';
+	import { auth } from './firebase';
+	import { authUser } from '../authstore/authstore';
 
 	const handleLogout = () => {
 		signOut(auth)
@@ -22,12 +22,6 @@
 
 	<nav class="flex gap-4">
 		{#if $authUser}
-			<a
-				href="/routes/protected"
-				class="hover:underline"
-                
-				class:active={$page.url.pathname === '/protected'}>Protected</a
-			>
 			<button class="hover:underline" on:click={handleLogout}>Logout</button>
 		{:else}
 			<a href="/register" class="hover:underline" class:active={$page.url.pathname === '/register'}
