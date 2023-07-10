@@ -1,13 +1,17 @@
 <script lang="ts">
+	import type { TodoItem } from '../authstore/authstore';
+
 	export let index: number;
-	export let task: string;
+	export let task: TodoItem;
 	export let editTask: (index: number) => void;
 	export let removeTask: (index: number) => void;
 </script>
 
 <div class="task-list">
 	<p>
-		{index + 1}. {task}
+		<span hidden>{index + 1}</span>
+		<input bind:checked={task.status} type="checkbox">
+		<span class:checked={task.status}>{task.text}</span>
 	</p>
 	<div class="task-actions">
 		<span
@@ -45,18 +49,22 @@
 		justify-content: space-between;
 	}
 
+	.checked {
+      text-decoration: line-through;
+    }
+
 	.task-actions {
 		display: flex;
 		align-items: center;
 		gap: 14px;
 		font-size: 1.3rem;
 
-    span {
-      cursor: pointer;
+		span {
+			cursor: pointer;
 
-      &:hover {
-        color: coral;
-      }
-    }
+			&:hover {
+				color: coral;
+			}
+		}
 	}
 </style>

@@ -3,8 +3,9 @@
 	import { getDoc, doc, setDoc } from 'firebase/firestore';
 	import { authUser } from '../../authstore/authstore';
 	import Task from '$lib/Task.svelte';
+	import type { TodoItem } from '../../authstore/authstore';
 
-	let taskList: string[] = [];
+	let taskList: TodoItem[] = [];
 	let currTask: string | undefined;
 	let error = false;
 
@@ -21,18 +22,18 @@
 			error = true;
 		}
 
-		taskList = [...(taskList ?? []), currTask ?? ""];
+		taskList = [...(taskList ?? []), {text: currTask ?? "", status: false}];
 		currTask = "";
 
 		await saveTasks();
 	}
 
 	async function editTask(index: number) {
-		let newTaskList = [...(taskList ?? [])].filter((value: string, i) => {
+		let newTaskList = [...(taskList ?? [])].filter(({text: string, status: boolean}, i) => {
 			return i != index;
 		});
 
-		currTask = taskList?.[index];
+		currTask = taskList?.[index].text;
 		taskList = newTaskList;
 
     await saveTasks();

@@ -23,10 +23,10 @@
 	<nav class="flex gap-4">
 		{#if $authUser}
 			<a
-				href="/routes/protected"
+				href="/routes/tasklist"
 				class="hover:underline"
                 
-				class:active={$page.url.pathname === '/protected'}>Protected</a
+				class:active={$page.url.pathname === '/tasklist'}>Protected</a
 			>
 			<button class="hover:underline" on:click={handleLogout}>Logout</button>
 		{:else}
