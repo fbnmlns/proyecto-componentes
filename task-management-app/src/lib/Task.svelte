@@ -10,7 +10,7 @@
 <div class="task-list">
 	<p>
 		<span hidden>{index + 1}</span>
-		<input bind:checked={task.status} type="checkbox">
+		<input bind:checked={task.status} type="checkbox" class="checkmark"/>
 		<span class:checked={task.status}>{task.text}</span>
 	</p>
 	<div class="task-actions">
@@ -21,7 +21,7 @@
 			on:keydown={() => {}}
 			role="button"
 			tabindex="0"
-			class="material-symbols-outlined"
+			class="material-symbols-outlined edit-icon"
 		>
 			edit_note
 		</span>
@@ -33,7 +33,7 @@
 			on:keydown={() => {}}
 			role="button"
 			tabindex="0"
-			class="material-symbols-outlined"
+			class="material-symbols-outlined delete-icon"
 		>
 			delete
 		</span>
@@ -42,28 +42,52 @@
 
 <style lang="scss">
 	.task-list {
-		border-left: 1px solid cyan;
-		padding: 8px 14px;
+		color: #132740;
+		border: 1px solid #d4dde9;
+		padding: 20px 20px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		background-color: aliceblue;
+		border-radius: 5px;
+		font-weight: 600;
+	}
+
+	.checkmark {
+		accent-color: #8895a7;
+    cursor: pointer;
 	}
 
 	.checked {
-      text-decoration: line-through;
-    }
+		color: #8895a7;
+		accent-color: #8895a7;
+		text-decoration: line-through;
+	}
 
 	.task-actions {
 		display: flex;
 		align-items: center;
-		gap: 14px;
-		font-size: 1.3rem;
+		gap: 25px;
 
-		span {
+		.edit-icon {
+			color: #2368a2;
 			cursor: pointer;
+			font-size: 1.7rem;
 
 			&:hover {
-				color: coral;
+				text-shadow: 0 0 2px #63a2d8;
+				font-size: 2rem;
+			}
+		}
+
+		.delete-icon {
+			color: #b82020;
+			cursor: pointer;
+			font-size: 1.7rem;
+
+			&:hover {
+				text-shadow: 0 0 2px #e36363;
+				font-size: 2rem;
 			}
 		}
 	}
