@@ -1,11 +1,10 @@
 <!-- src/routes/register/+page.svelte -->
 <script lang="ts">
-    
-    import { goto } from '$app/navigation';
-    import { createUserWithEmailAndPassword } from 'firebase/auth';
-    import { auth } from '../../lib/firebase';
-   
-let email: string;
+	import { goto } from '$app/navigation';
+	import { createUserWithEmailAndPassword } from 'firebase/auth';
+	import { auth } from '../../lib/firebase';
+
+	let email: string;
 	let password: string;
 
 	let success: boolean | undefined = undefined;
@@ -29,30 +28,89 @@ let email: string;
 	<title>Register</title>
 </svelte:head>
 
-<h1 class="text-4xl font-bold">Register</h1>
+<div class="mainContainer">
+	<form class="" on:submit|preventDefault={register}>
+		<h1>Register</h1>
 
-<form
-	class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-10/12"
-	on:submit|preventDefault={register}
->
-	<input
-		type="email"
-		placeholder="Email"
-		class="px-4 py-2 border border-gray-300 rounded-md"
-		required
-		bind:value={email}
-	/>
-	<input
-		type="password"
-		placeholder="Password"
-		class="px-4 py-2 border border-gray-300 rounded-md"
-		required
-		bind:value={password}
-	/>
+		<input type="email" placeholder="Email" required bind:value={email} />
+		<input type="password" placeholder="Password" required bind:value={password} />
 
-	<button type="submit" class="default-action">Register</button>
+		<button type="submit" class="default-action">Register</button>
 
-	{#if !success && success !== undefined}
-		<div class="p-8 text-red-500 bg-red-100">There was an error registering. Please try again.</div>
-	{/if}
-</form>
+		{#if !success && success !== undefined}
+			<div class="error">
+				<span class="material-symbols-outlined"> error </span>There was an error registering. Please
+				try again.
+			</div>
+		{/if}
+	</form>
+</div>
+
+<style lang="scss">
+	.mainContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		padding: 24px;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		border: 3px solid white;
+		border-radius: 5px;
+		padding: 70px;
+
+		input {
+			width: 100%;
+			padding: 20px;
+			background: transparent;
+			border: 3px solid white;
+			border-radius: 5px;
+			color: white;
+			flex: 1;
+			font-family: 'Roboto Mono', monospace;
+
+			&::placeholder {
+				color: #f8f9fa;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 3rem;
+		}
+
+		button {
+			background: transparent;
+			color: white;
+			padding: 14px 0;
+			border: 3px solid white;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 1rem;
+			display: grid;
+			place-items: center;
+			font-family: 'Roboto Mono', monospace;
+
+			&:hover {
+				box-shadow: 3px 3px white;
+			}
+		}
+	}
+
+	.error {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 0.7rem;
+		color: #e36363;
+	}
+</style>

@@ -107,9 +107,9 @@
 	}
 
 	.no-tasks {
-		font-size: 1.9rem;
+		font-size: 3rem;
 		font-weight: 600;
-		color: #f8f9fa;
+		color: white;
 	}
 
 	.enterTask {
@@ -124,12 +124,12 @@
 			background: transparent;
 			border: none;
 			padding: 20px;
-			color: #f8f9fa;
+			color: white;
 			flex: 1;
 			font-family: 'Roboto Mono', monospace;
 
 			&::placeholder {
-				color: #f8f9fa;
+				color: white;
 			}
 
 			&:focus {

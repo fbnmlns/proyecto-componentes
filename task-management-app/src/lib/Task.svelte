@@ -48,7 +48,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background-color: aliceblue;
+		background-color: #f5f7fa;
 		border-radius: 5px;
 		font-weight: 600;
 	}

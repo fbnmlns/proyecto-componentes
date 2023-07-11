@@ -17,25 +17,52 @@
 	};
 </script>
 
-<header class="space-y-4">
-	<a href="/" class="font-bold hover:underline">Home</a>
-
-	<nav class="flex gap-4">
+<header>
+	<nav>
 		{#if $authUser}
-			<button class="hover:underline" on:click={handleLogout}>Logout</button>
-		{:else}
-			<a href="/register" class="hover:underline" class:active={$page.url.pathname === '/register'}
-				>Register</a
+			<span
+				class="material-symbols-outlined logout-icon"
+				on:click={handleLogout}
+				on:keydown={() => {}}
+				role="button"
+				tabindex="0"
 			>
-			<a href="/login" class="hover:underline" class:active={$page.url.pathname === '/login'}
-				>Login</a
-			>
+				logout
+			</span>
+		{:else if !($page.url.pathname === '/')}
+			<a class="material-symbols-outlined arrow-back-icon" href="/"> arrow_back </a>
 		{/if}
 	</nav>
 </header>
 
-<style lang="postcss">
-	nav a.active {
-		@apply font-bold text-indigo-700;
+<style lang="scss">
+
+	.logout-icon {
+		display: flex;
+		font-size: 3rem;
+		color: white;
+		text-decoration: none;
+		cursor: pointer;
+		padding: 10px 18px;
+    float: right;
+
+		&:hover {
+			font-size: 3.5rem;
+		}
+	}
+
+	.arrow-back-icon {
+		display: flex;
+		font-size: 3rem;
+		color: white;
+		text-decoration: none;
+		cursor: pointer;
+		padding: 10px 18px;
+
+		&:hover {
+			font-size: 3.5rem;
+		}
 	}
 </style>
+
+
