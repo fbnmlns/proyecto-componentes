@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { signOut } from 'firebase/auth';
-	import { auth } from './firebase';
+	import { auth } from '../lib/firebase';
 	import { authUser } from '../authstore/authstore';
 
 	const handleLogout = () => {
