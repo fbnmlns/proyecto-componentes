@@ -5,10 +5,10 @@
 <div class="mainContainer">
 	<div class="box water-wave">
 		<h1>
-			TODO App
+			TO-DO App
 		</h1>
 		<h1>
-			TODO App
+			TO-DO App
 		</h1>
 	</div>
 	<div class="box">

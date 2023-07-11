@@ -10,21 +10,23 @@
 <div class="task-list">
 	<p>
 		<span hidden>{index + 1}</span>
-		<input bind:checked={task.status} type="checkbox" class="checkmark"/>
+		<input bind:checked={task.status} type="checkbox" class="checkmark" />
 		<span class:checked={task.status}>{task.text}</span>
 	</p>
 	<div class="task-actions">
-		<span
-			on:click={() => {
-				editTask(index);
-			}}
-			on:keydown={() => {}}
-			role="button"
-			tabindex="0"
-			class="material-symbols-outlined edit-icon"
-		>
-			edit_note
-		</span>
+		<a href="#editor">
+			<span
+				on:click={() => {
+					editTask(index);
+				}}
+				on:keydown={() => {}}
+				role="button"
+				tabindex="0"
+				class="material-symbols-outlined edit-icon"
+			>
+				edit_note
+			</span>
+		</a>
 
 		<span
 			on:click={() => {
@@ -55,7 +57,7 @@
 
 	.checkmark {
 		accent-color: #8895a7;
-    cursor: pointer;
+		cursor: pointer;
 	}
 
 	.checked {

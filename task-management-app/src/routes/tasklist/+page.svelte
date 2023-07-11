@@ -65,7 +65,7 @@
 </script>
 
 <div class="mainContainer">
-	<main>
+	<main on:change={saveTasks}>
 		{#each taskList as task, index}
 			<Task {index} {task} {editTask} {removeTask} />
 		{:else}
@@ -73,7 +73,7 @@
 		{/each}
 	</main>
 	<div class={'enterTask'}>
-		<input bind:value={currTask} type="text" placeholder="Enter todo" />
+		<input bind:value={currTask} type="text" id="editor" placeholder="Enter to-do" />
 		<span
 			on:click={addTask}
 			on:keydown={() => {}}
