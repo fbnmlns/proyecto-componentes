@@ -26,7 +26,8 @@
 		justify-content: center;
 		flex: 1;
 		padding: 24px;
-	}
+    max-height: 650px;	
+  }
 
   .water-wave {
 
@@ -73,7 +74,7 @@
   }
 
   .box {
-    height: 350px;
+    height: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;

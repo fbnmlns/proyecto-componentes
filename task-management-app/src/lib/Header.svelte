@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { signOut } from 'firebase/auth';
 	import { auth } from '../lib/firebase';
-	import { authUser } from '../authstore/authstore';
+	import { authUser } from '../store/authstore';
 
 	const handleLogout = () => {
 		signOut(auth)

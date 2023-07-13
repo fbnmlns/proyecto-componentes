@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { signInWithEmailAndPassword } from 'firebase/auth';
 	import { auth } from '$lib/firebase';
-	import { authUser } from '../../authstore/authstore';
+	import { authUser } from '../../store/authstore';
 
 	let email: string;
 	let password: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TodoItem } from '../authstore/authstore';
+	import type { TodoItem } from '../store/authstore';
 
 	export let index: number;
 	export let task: TodoItem;

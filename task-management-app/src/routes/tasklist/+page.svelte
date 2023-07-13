@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { db } from '$lib/firebase';
 	import { getDoc, doc, setDoc } from 'firebase/firestore';
-	import { authUser } from '../../authstore/authstore';
+	import { authUser } from '../../store/authstore';
 	import Task from '$lib/Task.svelte';
-	import type { TodoItem } from '../../authstore/authstore';
+	import type { TodoItem } from '../../store/authstore';
+	import themeColor from '../../store/themestore';
 
 	let taskList: TodoItem[] = [];
 	let currTask: string | undefined;
@@ -79,7 +80,7 @@
 			on:keydown={() => {}}
 			role="button"
 			tabindex="0"
-			class="material-symbols-outlined add-icon"
+			class="material-symbols-outlined add-icon {$themeColor}"
 		>
 			add
 		</span>
@@ -95,7 +96,7 @@
 		gap: 24px;
 		padding: 24px;
 		width: 100%;
-		max-width: 1000px;
+		max-width:1000px;
 		margin: 0 auto;
 	}
 
@@ -152,6 +153,40 @@
 				background-color: #f9d29b;
 				color: #4739ff;
 			}
+		}
+
+		.add-icon.barbie {
+			color: #f9d29b;
+
+			&:hover {
+				border: none;
+				background-color: #f9d29b;
+				color: #ff3e8d;
+			}
+		}
+
+		.add-icon.mintyWatermelon {
+			color: #a2f4b7;
+
+			&:hover {
+				border: none;
+				background-color: #a2f4b7;
+				color: #ff3366;
+			}
+		}
+
+		.add-icon.innocent {
+			color: #d4dde9;
+
+			&:hover {
+				border: none;
+				background-color: #d4dde9;
+				color: #ff99b4;
+			}
+		}
+
+		#editor {
+			scroll-behavior: smooth;
 		}
 	}
 </style>
