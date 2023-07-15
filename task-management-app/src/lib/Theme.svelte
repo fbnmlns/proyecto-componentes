@@ -3,10 +3,10 @@
 </script>
 
 <div class="mainContainer">
-	<div class="themeButton default" on:click={themeColor.toggleDefaultTheme} />
-	<div class="themeButton barbie" on:click={themeColor.toggleBarbieTheme} />
-	<div class="themeButton mintyWatermelon" on:click={themeColor.toggleMintyWatermelonTheme} />
-	<div class="themeButton innocent" on:click={themeColor.toggleInnocentTheme} />
+	<button class="themeButton default" on:click={themeColor.toggleDefaultTheme} />
+	<button class="themeButton barbie" on:click={themeColor.toggleBarbieTheme} />
+	<button class="themeButton mintyWatermelon" on:click={themeColor.toggleMintyWatermelonTheme} />
+	<button class="themeButton innocent" on:click={themeColor.toggleInnocentTheme} />
 </div>
 
 <style>
@@ -15,6 +15,7 @@
 		width: 100%;
 		display: flex;
 		padding: 1.5em;
+		justify-content: flex-end;
 	}
 
   .themeButton {

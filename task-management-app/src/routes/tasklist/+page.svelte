@@ -64,6 +64,9 @@
 		} catch (error) {}
 	}
 </script>
+<svelte:head>
+	<title>Tasklist</title>
+</svelte:head>
 
 <div class="mainContainer">
 	<main on:change={saveTasks}>
