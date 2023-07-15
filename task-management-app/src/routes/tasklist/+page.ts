@@ -1,5 +1,5 @@
 import { redirect } from '@sveltejs/kit';
-import { authUser } from '../../authstore/authstore';
+import { authUser } from '../../store/authstore';
 import { db } from '$lib/firebase';
 import { getDoc, doc, setDoc, type DocumentData } from "firebase/firestore";
 
