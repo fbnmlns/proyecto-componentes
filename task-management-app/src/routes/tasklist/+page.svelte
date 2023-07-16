@@ -99,7 +99,7 @@
 		gap: 24px;
 		padding: 24px;
 		width: 100%;
-		max-width:1000px;
+		max-width: 1000px;
 		margin: 0 auto;
 	}
 
