@@ -21,6 +21,7 @@
 		justify-content: center;
 		flex: 1;
 		padding: 24px;
+    max-height: 650px;	
 	}
 
 	.water-wave {
@@ -96,22 +97,24 @@
 		}
 	}
 
-	.box {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		flex: 2;
+  .box {
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+		max-height: 600px;
 
-		& {
-			align-self: center;
-		}
-	}
+    & {
+      align-self: center;
+    }
+  }
 
+  
 	@media (max-width: 900px) {
 		.water-wave {
 			h1 {
-				font-size: 7rem;
+				font-size: 8rem;
 			}
 		}
 
@@ -121,20 +124,20 @@
 		}
 	}
 
-	@media (max-width: 700px) {
+	@media (max-width: 768px) {
 		.water-wave {
 			h1 {
-				font-size: 6rem;
+				font-size: 7rem;
 			}
 		}
 
 		.button-style {
-			font-size: 1rem;
+			font-size: 1.2rem;
 			margin: 0 20px;
 		}
 	}
 
-	@media (max-width: 400px) {
+	@media (max-width: 320px) {
 		.water-wave {
 			h1 {
 				font-size: 4rem;
@@ -144,6 +147,50 @@
 		.button-style {
 			font-size: 0.9rem;
 			margin: 0 10px;
+		}
+	}
+
+  @media (max-width: 310px) {
+		.water-wave {
+			h1 {
+				font-size: 4.7rem;
+			}
+		}
+
+		.button-style {
+			font-size: 0.8rem;
+			margin: 0 5px;
+      padding: 16px 22px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.main-container {
+			padding: 12px;
+		}
+		
+		.water-wave h1 {
+			font-size: 6rem;
+		}
+
+		.button-style {
+			padding: 16px 28px;
+			font-size: 1.2rem;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.main-container {
+			padding: 8px;
+		}
+
+		.water-wave h1 {
+			font-size: 4rem;
+		}
+
+		.button-style {
+			padding: 12px 20px;
+			font-size: 1rem;
 		}
 	}
 </style>

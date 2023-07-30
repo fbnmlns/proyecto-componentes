@@ -9,7 +9,7 @@
 	<button class="themeButton innocent" on:click={themeColor.toggleInnocentTheme} />
 </div>
 
-<style>
+<style lang="scss">
 	.mainContainer {
 		clear: both;
 		width: 100%;
@@ -27,27 +27,22 @@
 		cursor: pointer;
 		user-select: none;
 		margin: 5px;
+		border: 1px solid white;
 	}
 
   .default {
-		border: 1px solid white;
 		background: linear-gradient(#f9d29b, #4739FF);
   }
 
   .barbie {
-		border: 1px solid white;
-			background: linear-gradient(#f9d29b, #ff3e8d);
+		background: linear-gradient(#f9d29b, #ff3e8d);
   }
 
   .mintyWatermelon {
-		border: 1px solid white;
 		background: linear-gradient(#a2f4b7, #ff3366);
   }
 
   .innocent {
-		border: 1px solid white;
 		background: linear-gradient(#94d6ff, #ff99b4);
   }
-
-
 </style>
