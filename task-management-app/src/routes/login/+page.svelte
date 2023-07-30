@@ -67,6 +67,7 @@
 		border: 3px solid white;
 		border-radius: 5px;
 		padding: 70px;
+		width: 450px;
 
 		input {
 			width: 100%;
@@ -77,6 +78,7 @@
 			color: white;
 			flex: 1;
 			font-family: 'Roboto Mono', monospace;
+			font-size: 1rem;
 
 			&::placeholder {
 				color: #f8f9fa;
@@ -89,13 +91,13 @@
 
 		h1 {
 			text-align: center;
-			font-size: 3rem;
+			font-size: 3.2rem;
 		}
 
 		button {
 			background: transparent;
 			color: white;
-			padding: 14px 0;
+			padding: 20px 0;
 			border: 3px solid white;
 			border-radius: 5px;
 			cursor: pointer;
