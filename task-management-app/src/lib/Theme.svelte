@@ -3,10 +3,12 @@
 </script>
 
 <div class="mainContainer">
-	<button class="themeButton default" on:click={themeColor.toggleDefaultTheme} />
-	<button class="themeButton barbie" on:click={themeColor.toggleBarbieTheme} />
-	<button class="themeButton mintyWatermelon" on:click={themeColor.toggleMintyWatermelonTheme} />
-	<button class="themeButton innocent" on:click={themeColor.toggleInnocentTheme} />
+	<div class="themeButtons">
+		<button class="default" on:click={themeColor.toggleDefaultTheme} />
+		<button class="barbie" on:click={themeColor.toggleBarbieTheme} />
+		<button class="mintyWatermelon" on:click={themeColor.toggleMintyWatermelonTheme} />
+		<button class="innocent" on:click={themeColor.toggleInnocentTheme} />
+	</div>
 </div>
 
 <style lang="scss">
@@ -15,34 +17,41 @@
 		width: 100%;
 		display: flex;
 		padding: 1.5em;
+		flex: 1;
 		justify-content: flex-end;
 	}
 
-  .themeButton {
-		color: #fff;
-		background-color: #000;
-		border-radius: 5px;
-		padding: 1em 1.5em;
-		border: none;
-		cursor: pointer;
-		user-select: none;
-		margin: 5px;
-		border: 1px solid white;
+	.themeButtons {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		padding: 1.5em;
+
+		button {
+			color: #fff;
+			border-radius: 5px;
+			padding: 1em 1.5em;
+			border: none;
+			cursor: pointer;
+			user-select: none;
+			margin: 5px;
+			border: 1px solid white;
+		}
 	}
 
-  .default {
-		background: linear-gradient(#f9d29b, #4739FF);
-  }
+	.default {
+		background: linear-gradient(#f9d29b, #4739ff);
+	}
 
-  .barbie {
+	.barbie {
 		background: linear-gradient(#f9d29b, #ff3e8d);
-  }
+	}
 
-  .mintyWatermelon {
+	.mintyWatermelon {
 		background: linear-gradient(#a2f4b7, #ff3366);
-  }
+	}
 
-  .innocent {
+	.innocent {
 		background: linear-gradient(#94d6ff, #ff99b4);
-  }
+	}
 </style>
