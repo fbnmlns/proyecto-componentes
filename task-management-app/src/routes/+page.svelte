@@ -89,7 +89,7 @@
 		cursor: pointer;
 
 		&:hover {
-			box-shadow: 5px 5px white;
+			box-shadow: 3px 3px white;
 		}
 
 		&:active {

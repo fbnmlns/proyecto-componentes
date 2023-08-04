@@ -38,7 +38,7 @@
 
 		<input type="email" placeholder="Email" required bind:value={email} />
 		<input type="password" placeholder="Password" required bind:value={password} />
-
+		<a href="/recover-password">Forgot password?</a>
 		<button type="submit">Login</button>
 
 		{#if !success && success !== undefined}
@@ -65,7 +65,7 @@
 		flex-direction: column;
 		gap: 14px;
 		border: 3px solid white;
-		border-radius: 5px;
+		border-radius: 10px;
 		padding: 70px;
 		width: 450px;
 
@@ -74,7 +74,7 @@
 			padding: 20px;
 			background: transparent;
 			border: 3px solid white;
-			border-radius: 5px;
+			border-radius: 10px;
 			color: white;
 			flex: 1;
 			font-family: 'Roboto Mono', monospace;
@@ -94,12 +94,18 @@
 			font-size: 3.2rem;
 		}
 
+		a {
+			color: #f8f9fa;
+			font-size: 0.8rem;
+			padding: 3px;
+		}
+
 		button {
 			background: transparent;
 			color: white;
 			padding: 20px 0;
 			border: 3px solid white;
-			border-radius: 5px;
+			border-radius: 10px;
 			cursor: pointer;
 			font-size: 1rem;
 			display: grid;
