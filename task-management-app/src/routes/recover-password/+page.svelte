@@ -1,7 +1,7 @@
 <!-- src/routes/register/+page.svelte -->
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { createUserWithEmailAndPassword } from 'firebase/auth';
+	import { sendPasswordResetEmail } from 'firebase/auth';
 	import { auth } from '../../lib/firebase';
 
 	let email: string;
@@ -10,7 +10,7 @@
 	let success: boolean | undefined = undefined;
 
 	const register = () => {
-		createUserWithEmailAndPassword(auth, email, password)
+		sendPasswordResetEmail(auth, email)
 			.then(() => {
 				goto('/login');
 			})
@@ -25,22 +25,20 @@
 </script>
 
 <svelte:head>
-	<title>Register</title>
+	<title>Recover Password</title>
 </svelte:head>
 
 <div class="mainContainer">
 	<form on:submit|preventDefault={register}>
-		<h1>Register</h1>
+		<h1>Recover Password</h1>
 
 		<input type="email" placeholder="Email" required bind:value={email} />
-		<input type="password" placeholder="Password" required bind:value={password} />
 
-		<button type="submit" class="default-action">Register</button>
+		<button type="submit" class="default-action">Send email</button>
 
 		{#if !success && success !== undefined}
 			<div class="error">
-				<span class="material-symbols-outlined"> error </span>There was an error registering. Please
-				try again.
+				<span class="material-symbols-outlined"> error </span>There was an error. Please try again.
 			</div>
 		{/if}
 	</form>
