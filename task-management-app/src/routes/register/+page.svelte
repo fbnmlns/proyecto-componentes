@@ -113,6 +113,9 @@
 		align-items: center;
 		gap: 10px;
 		font-size: 0.7rem;
-		color: #e36363;
+		color: #b82020;
+		background-color: #fce8e8;
+		border-radius: 5px;
+		padding: 3px;
 	}
 </style>
