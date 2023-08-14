@@ -29,8 +29,8 @@
 		background: linear-gradient(#f9d29b, #ff3e8d);
 	}
 
-	.mainContainer.mintyWatermelon {
-		background: linear-gradient(#a2f4b7, #ff3366);
+	.mainContainer.seaFoam {
+		background: linear-gradient(#bbf7d0, #86efac, #3b82f6);
 	}
 
 	.mainContainer.innocent {

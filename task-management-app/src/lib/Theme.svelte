@@ -6,7 +6,7 @@
 	<div class="themeButtons">
 		<button class="default" on:click={themeColor.toggleDefaultTheme} />
 		<button class="barbie" on:click={themeColor.toggleBarbieTheme} />
-		<button class="mintyWatermelon" on:click={themeColor.toggleMintyWatermelonTheme} />
+		<button class="seaFoam" on:click={themeColor.toggleSeaFoamTheme} />
 		<button class="innocent" on:click={themeColor.toggleInnocentTheme} />
 	</div>
 </div>
@@ -47,8 +47,8 @@
 		background: linear-gradient(#f9d29b, #ff3e8d);
 	}
 
-	.mintyWatermelon {
-		background: linear-gradient(#a2f4b7, #ff3366);
+	.seaFoam {
+		background: linear-gradient(#bbf7d0, #86efac, #3b82f6);
 	}
 
 	.innocent {
