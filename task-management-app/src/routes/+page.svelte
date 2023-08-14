@@ -4,8 +4,8 @@
 
 <div class="main-container">
 	<div class="box water-wave">
-		<h1>TO-DO App</h1>
-		<h1>TO-DO App</h1>
+		<h1>Hola profe</h1>
+		<h1>Hola profe</h1>
 	</div>
 	<div class="box">
 		<a href="/register" class="button-style">Register</a>
