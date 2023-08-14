@@ -168,13 +168,13 @@
 			}
 		}
 
-		.add-icon.mintyWatermelon {
-			color: #a2f4b7;
+		.add-icon.seaFoam {
+			color: #bbf7d0;
 
 			&:hover {
 				border: none;
-				background-color: #a2f4b7;
-				color: #ff3366;
+				background-color: #bbf7d0;
+				color: #3b82f6;
 			}
 		}
 
